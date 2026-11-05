@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ST Football Classic</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>ST FOOTBALL <span>CLASSIC</span></h1>
+  <div class="coins">🪙 <span id="coins">2500</span></div>
+</header>
+
+<nav>
+  <button onclick="showPage('home')">الرئيسية</button>
+  <button onclick="showPage('team')">فريقي</button>
+  <button onclick="showPage('store')">المتجر</button>
+  <button onclick="showPage('match')">المباراة</button>
+</nav>
+
+<main>
+  <section id="home" class="page active">
+    <h2>مرحباً بك في عالم كرة القدم!</h2>
+    <p>اصنع فريق الأحلام وابدأ رحلتك نحو المجد.</p>
+    <div class="stadium">⚽ 🏟️ ⚽</div>
+    <button class="gold" onclick="showPage('match')">
+      ابدأ المباراة
+    </button>
+  </section>
+
+  <section id="team" class="page">
+    <h2>فريقي</h2>
+    <div id="teamCards" class="cards"></div>
+  </section>
+
+  <section id="store" class="page">
+    <h2>متجر اللاعبين</h2>
+    <div id="storeCards" class="cards"></div>
+  </section>
+
+  <section id="match" class="page">
+    <h2>مباراة كرة القدم</h2>
+    <div class="score">ST UNITED <span id="score">0 - 0</span> RIVALS</div>
+    <canvas id="game" width="900" height="500"></canvas>
+    <div class="controls">
+      <button onclick="movePlayer(0,-1)">⬆️</button>
+      <button onclick="movePlayer(-1,0)">⬅️</button>
+      <button onclick="movePlayer(1,0)">➡️</button>
+      <button onclick="movePlayer(0,1)">⬇️</button>
+      <button class="gold" onclick="shoot()">تسديد ⚽</button>
+    </div>
+  </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
+<div id="game3d"></div>
+<canvas id="game" width="900" height="500" style="display:none"></canvas>
+<script type="module" src="match3d.js"></script>
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ST Football Classic</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="game-container"></div>
+
+<div class="scoreboard">
+    <div>ST BLUE</div>
+    <strong id="score">0 - 0</strong>
+    <div>RED UNITED</div>
+    <span id="timer">00:00</span>
+</div>
+
+<div class="controls">
+    <button id="up">▲</button>
+    <div>
+        <button id="left">◀</button>
+        <button id="down">▼</button>
+        <button id="right">▶</button>
+    </div>
+</div>
+
+<div class="actions">
+    <button id="pass">PASS</button>
+    <button id="shoot">SHOOT</button>
+    <button id="switch">SWITCH</button>
+</div>
+
+<div id="message">ST FOOTBALL CLASSIC</div>
+
+<script type="module" src="script.js"></script>
+</body>
+</html>
+
+<div id="startOverlay" class="overlay">
+    <button id="startBtn">ابدأ المباراة</button>
+</div>
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ST Football Classic</title>
+<link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+<header class="top">
+  <h2>⚽ ST FOOTBALL</h2>
+  <div>Coins: <b id="coins">10000</b></div>
+</header>
+
+<nav class="menu">
+  <button data-page="home">الرئيسية</button>
+  <button data-page="team">الفريق</button>
+  <button data-page="market">المتجر</button>
+  <button data-page="settings">الإعدادات</button>
+</nav>
+
+<main>
+<section id="home" class="page active">
+  <h1>ST FOOTBALL CLASSIC</h1>
+  <p>مرحباً بك في عالم كرة القدم</p>
+  <div class="hero">
+    <h2>استعد للمباراة!</h2>
+    <button id="play">العب الآن ⚽</button>
+  </div>
+</section>
+
+<section id="team" class="page">
+  <h2>تشكيلة فريقي</h2>
+  <label>اختر التشكيلة</label>
+  <select id="formation">
+    <option>4-3-3</option>
+    <option>4-4-2</option>
+    <option>4-2-3-1</option>
+  </select>
+  <div id="teamPlayers" class="cards"></div>
+</section>
+
+<section id="market" class="page">
+  <h2>سوق الانتقالات</h2>
+  <div id="marketPlayers" class="cards"></div>
+</section>
+
+<section id="settings" class="page">
+  <h2>الإعدادات</h2>
+  <label><input type="checkbox" id="sound" checked> تفعيل الصوت</label>
+  <button id="reset">إعادة ضبط بيانات اللعبة</button>
+</section>
+
+<section id="match" class="page">
+  <h2>المباراة</h2>
+  <div id="matchFrame">
+    <div id="game-container"></div>
+    <div id="matchScore">0 - 0</div>
+  </div>
+  <button id="backHome">العودة للقائمة</button>
+</section>
+</main>
+
+<footer>ST FOOTBALL CLASSIC © 2026</footer>
+
+<script type="module" src="script.js"></script>
+</body>
+</html>

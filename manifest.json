@@ -1,0 +1,20 @@
+
+{
+  "name": "ST Football Classic",
+  "short_name": "ST Football",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "orientation": "landscape",
+  "background_color": "#0a1422",
+  "theme_color": "#101f33"
+}
+
+{
+  "name": "ST Football Classic",
+  "short_name": "ST Football",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#07131d",
+  "theme_color": "#102c3a",
+  "icons": []
+}

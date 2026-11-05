@@ -1,0 +1,457 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #0a1422;
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+header {
+  background: #101f33;
+  padding: 18px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+header h1 {
+  font-size: 25px;
+}
+
+header h1 span {
+  color: #e7bd61;
+}
+
+.coins {
+  color: #e7bd61;
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 15px;
+  background: #152840;
+}
+
+button {
+  background: #243b55;
+  color: white;
+  border: 1px solid #52677c;
+  border-radius: 8px;
+  padding: 12px 18px;
+  cursor: pointer;
+  margin: 4px;
+}
+
+button:hover {
+  background: #3c5875;
+}
+
+.gold {
+  background: #d7ae52;
+  color: #172437;
+  font-weight: bold;
+}
+
+main {
+  max-width: 1100px;
+  margin: auto;
+  padding: 15px;
+}
+
+.page {
+  display: none;
+  background: #12243a;
+  border: 1px solid #344b64;
+  padding: 25px;
+  border-radius: 15px;
+}
+
+.page.active {
+  display: block;
+}
+
+.stadium {
+  font-size: 90px;
+  padding: 35px;
+  background: #1b754d;
+  border-radius: 12px;
+  margin: 20px 0;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.player {
+  background: linear-gradient(145deg,#d9c17f,#95713b);
+  color: #172437;
+  width: 150px;
+  padding: 18px;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+.player h3 {
+  font-size: 30px;
+}
+
+.score {
+  display: flex;
+  justify-content: space-around;
+  margin: 15px;
+  font-weight: bold;
+  color: #e7bd61;
+}
+
+canvas {
+  width: 100%;
+  max-width: 900px;
+  background: #25804e;
+  border: 4px solid white;
+  border-radius: 8px;
+}
+
+.controls {
+  margin-top: 15px;
+}
+
+@media(max-width:600px) {
+  header h1 {
+    font-size: 19px;
+  }
+
+  .stadium {
+    font-size: 55px;
+  }
+
+  .page {
+    padding: 12px;
+  }
+}
+
+#game3d {
+  width: 100%;
+  height: clamp(300px, 60vw, 560px);
+  overflow: hidden;
+  border: 3px solid #e7bd61;
+  border-radius: 12px;
+  background: #173c32;
+  position: relative;
+}
+
+#game3d canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.controls button {
+  min-width: 48px;
+  min-height: 45px;
+  touch-action: none;
+  user-select: none;
+}
+
+#game3d canvas {
+  max-width: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+    background: #07131c;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+#game-container {
+    width: 100vw;
+    height: 100vh;
+}
+
+canvas {
+    display: block;
+}
+
+.scoreboard {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: #071a25e8;
+    border: 1px solid #1b776c;
+    border-radius: 12px;
+    padding: 12px 20px;
+    z-index: 5;
+    white-space: nowrap;
+}
+
+.scoreboard strong {
+    color: #20e0a5;
+    font-size: 25px;
+}
+
+#timer {
+    color: #ffd65a;
+}
+
+.controls {
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    display: grid;
+    gap: 5px;
+    z-index: 5;
+}
+
+.controls div {
+    display: flex;
+    gap: 5px;
+}
+
+button {
+    border: 1px solid #ffffff55;
+    background: #102f40e8;
+    color: white;
+    padding: 15px;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    touch-action: none;
+    user-select: none;
+}
+
+button:active {
+    background: #14bd91;
+}
+
+.actions {
+    position: absolute;
+    bottom: 35px;
+    right: 25px;
+    display: flex;
+    gap: 12px;
+    z-index: 5;
+}
+
+.actions button {
+    width: 75px;
+    height: 65px;
+    border-radius: 50%;
+    background: #0b6c65e8;
+}
+
+#shoot {
+    background: #c43c32e8;
+}
+
+#message {
+    position: absolute;
+    top: 85px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #d9fff2;
+    font-weight: bold;
+    pointer-events: none;
+}
+
+@media(max-width:600px) {
+    .scoreboard {
+        gap: 8px;
+        padding: 9px;
+        font-size: 11px;
+    }
+
+    .scoreboard strong {
+        font-size: 18px;
+    }
+
+    .controls {
+        bottom: 15px;
+        left: 12px;
+    }
+
+    .actions {
+        right: 10px;
+        bottom: 25px;
+        gap: 5px;
+    }
+
+    .actions button {
+        width: 58px;
+        height: 55px;
+        font-size: 10px;
+        padding: 5px;
+    }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #07131d;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  background: #102c3a;
+  border-bottom: 2px solid #15d9a2;
+}
+
+.top h2 {
+  color: #20e0ad;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  padding: 15px;
+  background: #0b202c;
+  flex-wrap: wrap;
+}
+
+button, select {
+  border: 0;
+  border-radius: 8px;
+  padding: 12px 18px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button {
+  background: #087f70;
+  color: white;
+}
+
+button:hover {
+  background: #16c79c;
+}
+
+main {
+  width: min(1100px, 94%);
+  margin: 25px auto;
+  min-height: 70vh;
+}
+
+.page {
+  display: none;
+}
+
+.page.active {
+  display: block;
+}
+
+.hero {
+  margin-top: 30px;
+  padding: 65px 20px;
+  text-align: center;
+  border-radius: 15px;
+  background: linear-gradient(120deg,#123d43,#087c56);
+}
+
+.hero button {
+  font-size: 20px;
+  background: #e5b934;
+  color: #10202a;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(145px,1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.player-card {
+  padding: 18px 12px;
+  text-align: center;
+  background: linear-gradient(145deg,#184c5c,#10212e);
+  border: 1px solid #35a99a;
+  border-radius: 12px;
+}
+
+.player-card h3 {
+  color: #f5d76e;
+}
+
+.player-card p {
+  color: #c3dce1;
+}
+
+#matchFrame {
+  position: relative;
+  height: 65vh;
+  min-height: 350px;
+  background: #137b42;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+#game-container {
+  width: 100%;
+  height: 100%;
+}
+
+#game-container canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+#matchScore {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  border-radius: 8px;
+  background: #061b27e8;
+  font-size: 24px;
+  pointer-events: none;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #102c3a;
+  color: #91b4bd;
+}
+
+@media(max-width:600px) {
+  .menu {
+    gap: 5px;
+  }
+
+  .menu button {
+    padding: 10px;
+    font-size: 12px;
+  }
+}
